@@ -34,6 +34,7 @@ public class SummaryServiceImpl implements SummaryService {
         // sectionCode -> SectionVO 映射
         Map<String, BigSummarySectionVO> sectionMap = new LinkedHashMap<>();
 
+        // 获取或新建科室
         for (BigSummarySectionVO section : sparseList) {
             String sectionKey = section.getSectionCode();
             BigSummarySectionVO mergedSection = sectionMap.computeIfAbsent(sectionKey, k -> {
